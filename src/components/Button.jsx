@@ -1,10 +1,13 @@
+import "../stylesheets/Button.css";
+
 function Button (props){
     const isOperator = (val)=>{
         return isNaN(val) && (val != ".") && (val != "=");
     }
     return(
-        <div className={`button-container${isOperator(props.children) ? 'operator': null }`}>
+        <div onClick={()=>props.setInput(props.input + props.children)} className={`button-container ${isOperator(props.children) ? 'operator': ""}`.trimEnd()}>
             { props.children }
+            {console.log(props.input)}
         </div>
     );
 }
