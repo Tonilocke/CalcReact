@@ -16,7 +16,12 @@ function App() {
   }
 
   const calculate= ()=>{
-    setInput(evaluate(input));
+    if(input){
+      setInput(evaluate(input));
+    }else{
+      alert("Please insert values");
+    }
+    
   }
   return (
     <div className='App'>
